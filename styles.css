@@ -3,3 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.draw-board{
+    height: 800px;
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cell{
+    border: 1px solid #888;
+    /* max-width: 50px;
+    min-width: 12.5px; */
+}
