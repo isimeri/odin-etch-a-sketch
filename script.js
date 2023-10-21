@@ -1,7 +1,13 @@
 const board = document.querySelector(".draw-board");
 const boardSizeSlider = document.querySelector('#board-size');
 const resizeBtn = document.querySelector("#resize-board-btn");
+const clearBtn = document.querySelector("#clear-board-btn");
+const toggleGridBtn = document.querySelector("#toggle-grid-btn");
+
 let boardCellsArr = [];
+let bgColor = 'black';
+
+let isMouseDown = false;
 
 function resizeBoard(){
     const size = boardSizeSlider.value;
@@ -19,4 +25,41 @@ function resizeBoard(){
     }
 }
 
+function clearBoard(){
+    boardCellsArr.forEach(cell => {
+        cell.style.backgroundColor = "white";
+    });
+}
+function toggleGrid(){
+    boardCellsArr.forEach(cell => {
+        cell.classList.toggle("grid");
+    });
+}
+
+function init (){
+    resizeBoard();
+    bgColor = "black";
+}
+
 resizeBtn.addEventListener("click", resizeBoard);
+clearBtn.addEventListener("click", clearBoard);
+toggleGridBtn.addEventListener("click", toggleGrid);
+
+// testDiv.addEventListener("mousedown", () => {
+//     testDiv.style.backgroundColor = "darkgreen";
+// });
+document.addEventListener('mousedown', () => {
+    isMouseDown = true;
+});
+document.addEventListener('mouseup', () => {
+    isMouseDown = false;
+});
+board.addEventListener("mousemove", (e) => {
+
+    if(isMouseDown){
+        e.target.style.backgroundColor = bgColor;
+    }
+});
+board.addEventListener("dragstart", (e) => { e.preventDefault();});
+
+init();

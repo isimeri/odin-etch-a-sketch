@@ -11,10 +11,14 @@
     <h1>Etch-a-sketch</h1>
     <div class="game-container">
         <div class="buttons-container">
-            <input type="range" name="boardSize" id="board-size" min="16" max="64" step="1">
-            <button class="btn" id="resize-board-btn">Resize</button>
+            <div class="resize-wrapper">
+                <input type="range" name="boardSize" id="board-size" min="16" max="64" step="1">
+                <button class="btn" id="resize-board-btn">Resize</button>
+            </div>
+            <button class="btn" id="clear-board-btn">Clear</button>
+            <button class="btn" id="toggle-grid-btn">Toggle grid</button>
         </div>
-        <div class="draw-board">
+        <div class="draw-board" draggable="false">
 
         </div>
     </div>
