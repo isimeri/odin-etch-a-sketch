@@ -3,6 +3,7 @@ const boardSizeSlider = document.querySelector('#board-size');
 const resizeBtn = document.querySelector("#resize-board-btn");
 const clearBtn = document.querySelector("#clear-board-btn");
 const toggleGridBtn = document.querySelector("#toggle-grid-btn");
+const colorPicker = document.querySelector("#color-picker");
 
 let boardCellsArr = [];
 let bgColor = 'black';
@@ -44,6 +45,9 @@ function init (){
 resizeBtn.addEventListener("click", resizeBoard);
 clearBtn.addEventListener("click", clearBoard);
 toggleGridBtn.addEventListener("click", toggleGrid);
+colorPicker.addEventListener("change", () => {
+    bgColor = colorPicker.value;
+});
 
 // testDiv.addEventListener("mousedown", () => {
 //     testDiv.style.backgroundColor = "darkgreen";

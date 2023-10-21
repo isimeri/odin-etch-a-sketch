@@ -5,6 +5,7 @@
 }
 body{
     background-color: darkgreen;
+    font-family: "Raleway", sans-serif;
 }
 h1{
     text-align: center;
@@ -43,5 +44,16 @@ h1{
 }
 .cell.grid{
     border: 1px solid #888;
+}
+label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: hsl(80, 61%, 40%);
+    padding: 0.5rem;
+}
+#color-picker{
+    border: none;
+    outline: none;
 }
 
