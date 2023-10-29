@@ -1,5 +1,6 @@
 const board = document.querySelector(".draw-board");
 const boardSizeSlider = document.querySelector('#board-size');
+const boardSizeSpan = document.querySelector('.resize-inner-wrapper > span');
 const resizeBtn = document.querySelector("#resize-board-btn");
 const clearBtn = document.querySelector("#clear-board-btn");
 const toggleGridBtn = document.querySelector("#toggle-grid-btn");
@@ -91,6 +92,9 @@ toggleGridBtn.addEventListener("click", toggleGrid);
 toggleRainbowBtn.addEventListener("click", toggleRainbowMode);
 colorPicker.addEventListener("change", setColor);
 toggleEyedropperBtn.addEventListener("click", toggleEyedropper);
+boardSizeSlider.addEventListener("change", e => {
+    boardSizeSpan.textContent = boardSizeSlider.value;
+});
 
 
 document.addEventListener('mousedown', () => {
